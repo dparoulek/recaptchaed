@@ -1,8 +1,14 @@
 Description:
-    Generate the recaptchaed.yml file
+    Configures the recaptchaed gem rails plugin.
 
-Example:
+Usage:
     ./script/generate recaptchaed
 
     This will create:
         config/recaptchaed.yml
+	config/initializers/recaptchaed.rb
+ 
+    And this also adds an i18n error message to the config/locales/en.yml file
+
+
+    ./script/destroy recaptchaed will undo everything that generate created and/or added
