@@ -12,6 +12,12 @@ Install
 
 @gem install recaptchaed@
 
+# Tell Rails to use the gem
+
+Open config/environment.rb and enter the following: 
+
+@config.gem "recaptchaed"@
+
 # Run the generator to create config files and to add customizable error messages
 
 @script/generate recaptchaed@
@@ -23,6 +29,8 @@ If it runs successfully, you should see the following:
       create  config/initializers/recaptchaed.rb
       added  recaptcha i18n error message to config/locales/en.yml
 @
+
+# Edit the config/recaptcaed.yml file and add your personal recaptcha public and private api keys
 
 Uninstall
 ==========
@@ -68,7 +76,18 @@ The "recaptcha site(recaptcha)":http://code.google.com/apis/recaptcha/docs/custo
 
 @  <%= recaptcha_tag (RECAPTCHAED["RECAPTCHA_PUBLIC_KEY"], "recaptcha_div", "white") %> @
 
-# Add logic to create action inside the comments controller to validate the captcha: 
+# Add logic to create action inside the comments controller to validate the captcha. 
+
+First, include the library in the comments controller: 
+
+@
+class CommentsController < ApplicationController
+  include Recaptchaed
+  ...rest of controller...
+end
+@
+
+Then, protect the create method using the 'validate_captcha(..)' method
 
 @ 
   # POST /comments
@@ -94,7 +113,7 @@ The "recaptcha site(recaptcha)":http://code.google.com/apis/recaptcha/docs/custo
   end
 @
 
-When a user fails to enter the correct captcha, the error message displayed is defined inside 'config/locales/en.yml'. Feel free to update that to whatever you like. And, it can also be internationalized, if needed. 
+When a user fails to enter the correct captcha, the error message that is displayed is defined inside 'config/locales/en.yml'. Feel free to update that to whatever you like. And, it can also be internationalized, if needed. 
 
 Enjoy!
 
