@@ -1,0 +1,8 @@
+Description:
+    Generate the recaptchaed.yml file
+
+Example:
+    ./script/generate recaptchaed
+
+    This will create:
+        config/recaptchaed.yml

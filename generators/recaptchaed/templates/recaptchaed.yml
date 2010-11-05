@@ -1,0 +1,14 @@
+development:
+  RECAPTCHA_ENABLED: true
+  RECAPTCHA_PUBLIC_KEY: your recaptcha private key here
+  RECAPTCHA_PRIVATE_KEY: your recaptcha private key here
+
+test:
+  RECAPTCHA_ENABLED: false
+  RECAPTCHA_PUBLIC_KEY: your recaptcha private key here
+  RECAPTCHA_PRIVATE_KEY: your recaptcha private key here
+
+production:
+  RECAPTCHA_ENABLED: true
+  RECAPTCHA_PUBLIC_KEY: your recaptcha private key here
+  RECAPTCHA_PRIVATE_KEY: your recaptcha private key here
