@@ -9,25 +9,16 @@ Install
 1. First, go to [recaptcha](http://www.google.com/recaptcha) and sign up for a api key.
 
 2. Next, install the recaptchaed gem: 
-
     gem install recaptchaed
-
 3. Tell Rails to use the gem
-
 Open config/environment.rb and enter the following: 
-
     config.gem "recaptchaed"
-
 4. Run the generator to create config files and to add customizable error messages
-
     script/generate recaptchaed
-
 If it runs successfully, you should see the following: 
-
       create  config/recaptchaed.yml
       create  config/initializers/recaptchaed.rb
       added  recaptcha i18n error message to config/locales/en.yml
-
 5. Edit the config/recaptcaed.yml file and add your personal recaptcha public and private api keys
 
 Uninstall
